@@ -1,0 +1,8 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	TestSword: {
+		DisplayName: 莫托洛夫之劍
+		Tooltip: 拋出持續燃燒的火炎
+	}
+}
