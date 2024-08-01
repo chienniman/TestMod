@@ -7,7 +7,6 @@ namespace TestMod.Content.Items
 { 
 	public class TestSword : ModItem
 	{
-		// 設定參數
 		public override void SetDefaults()
 		{
 			Item.damage = 50;
@@ -28,14 +27,12 @@ namespace TestMod.Content.Items
 
         }
 
-        // 設定特效
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AmberBolt);
             Main.dust[dust].noGravity = true;
         }
 
-		// 註冊到物品集合
         public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
