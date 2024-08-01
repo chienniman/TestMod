@@ -9,7 +9,6 @@ namespace TestMod.Content.NPCs
 { 
 	public class TestZombie : ModNPC
     {
-        // 砞﹚更把计
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
@@ -23,7 +22,6 @@ namespace TestMod.Content.NPCs
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
         }
 
-        // 砞﹚把计
         public override void SetDefaults()
         {
             NPC.CloneDefaults(NPCID.Zombie);
@@ -38,20 +36,16 @@ namespace TestMod.Content.NPCs
             BannerItem = Item.BannerToItem(Banner);
         }
 
-        // 奔辅
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(ItemDropRule.Common(ItemID.PsychoKnife, 25));
         }
 
-        // ネΘ诀瞯
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            // キА0.2f
             return SpawnCondition.OverworldNightMonster.Chance - 0.45f;
         }
 
-        // 秈┣瓜挪
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
