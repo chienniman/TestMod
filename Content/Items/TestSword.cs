@@ -2,16 +2,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using Terraria.Audio;
 
 namespace TestMod.Content.Items
 { 
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
 	public class TestSword : ModItem
 	{
-		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.TestMod.hjson' file.
+		// 設定參數
 		public override void SetDefaults()
 		{
 			Item.damage = 50;
@@ -31,17 +27,15 @@ namespace TestMod.Content.Items
             Item.UseSound = SoundID.DD2_FlameburstTowerShot;
 
         }
+
+        // 設定特效
         public override void MeleeEffects(Player player, Rectangle hitbox)
         {
             int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AmberBolt);
             Main.dust[dust].noGravity = true;
-            //if (Main.rand.NextBool(3))
-            //{
-            //    int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.AmberBolt);
-            //    Main.dust[dust].noGravity = true;
-            //}
         }
 
+		// 註冊到物品集合
         public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
