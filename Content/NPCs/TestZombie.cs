@@ -51,7 +51,7 @@ namespace TestMod.Content.NPCs
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-                new FlavorTextBestiaryInfoElement("High Defense Zombie")
+                new FlavorTextBestiaryInfoElement("Psycho Zombie")
             });
         }
 
