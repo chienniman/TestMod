@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 
 namespace TestMod.Content.NPCs
 { 
@@ -37,9 +38,16 @@ namespace TestMod.Content.NPCs
             BannerItem = Item.BannerToItem(Banner);
         }
 
+        // 掉落物
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(ItemDropRule.Common(ItemID.PsychoKnife, 25));
+        }
+
         // 生成機率
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
+            // 平均值為0.2f
             return SpawnCondition.OverworldNightMonster.Chance - 0.45f;
         }
 
