@@ -6,3 +6,5 @@ Items: {
 		Tooltip: First sword
 	}
 }
+
+NPCs.TestZombie.DisplayName: Heavy Zombie
